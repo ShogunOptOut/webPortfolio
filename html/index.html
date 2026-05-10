@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Der Titel am Tab -->
+    <title>MarvynM</title>
+    <meta
+      name="description"
+      content="Portfolio von Marvyn, Umschüler IT in Fachrichtung Anwendungsentwicklung."
+    />
+    <link rel="stylesheet" href="../css/style_index.css" />
+
+    <!-- Hier binde ich PyScript ein -->
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2026.2.1/core.css"
+    />
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2023.11.2/core.js"
+    ></script>
+
+    <!-- Das kleine Logo im Tab -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../images/LogoTabSW.png"
+      alt="Logo mit einem M in geringer Auflösung"
+      canvas { display: block; }
+      />
+      <section class = "hero">
+      </section> 
+      
+    </head>
+    <div class="cursor"></div>
+    <body>
+      <div>
+        <div class="parallax"></div>
+        <header class="top-nav">
+          <div class="logo"></div>
+        </header>
+        <header class="site-header" id="landingpage">
+        <canvas id="matrix"></canvas>
+        <h1>Header</h1>
+        </header>
+
+        <h2>Projekte</h2>
+
+        <div class="test">
+        <div class="pythoncode">
+        <script type="py" terminal>
+          from pyscript import display
+          display("Python-Skript in HTML über PyScript einbinden:")
+
+          print("\nAusgabe der Fibonacci-Folge (f_{n}=f_{n-1}+f_{n-2} für n≥3):\nPython Code:\nprev = 0\nprev_prev = 1\n\nfib_lenght = int(7)\nfor i in range(0, fib_lenght):\n    present = prev + prev_prev\n    prev_prev = prev\n    prev = present\n    print(present)")
+          
+          prev = 0
+          prev_prev = 1
+
+          fib_lenght = int(7)
+          for i in range(0, fib_lenght):
+              present = prev + prev_prev
+              prev_prev = prev
+              prev = present
+              print(present)
+
+          print("\nName: Marvyn Melzer \nAngehender Fachinformatiker für Anwendungsentwicklung. \n\nStatus: Umschulung / Berufseinstieg \nStandort: Frankfurt")
+        </script>
+        <p>Die ersten 7 Zahlen in der Fibonacci-Folge.</p>      
+
+      </div>
+    </div>
+    <script src="../js/script.js"></script>
+
+    </div>
+    
+  </body>
+
+</html>

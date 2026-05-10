@@ -1,0 +1,92 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+
+  width: 96%;
+  height: 100%;
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 255, 120, 0.2);
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow:
+    0 0 10px lime,
+    0 0 20px lime,
+    0 0 40px lime;
+
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+h2 {
+  text-align: center;
+  margin: 1rem;
+  height: 3rem;
+  font-size: 35px;
+  color: #ffffff;
+  background-color: limegreen;
+  border-radius: 10px;
+}
+
+.site-header h1 {
+  color: white;
+  background-color: black;
+}
+
+.test {
+  background-color: rgb(0, 0, 0);
+  opacity: 98%;
+}
+
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2; /* liegt auf hinterer Ebene */
+  background: black; /* Fallback, Absicherung falls nichts "gezeichnet" wird. */
+}
+
+.site-header {
+  background-color: rgb(204, 224, 224);
+}
+
+.pythoncode {
+  position: relative;
+  margin-left: 10rem;
+  width: 40rem;
+
+  background-color: rgb(77, 82, 77);
+  color: rgb(141, 224, 162);
+}
+
+.parallax {
+  position: relative;
+  background-image: url("../images/LogoEntwurfWeissTransparent.png");
+  min-height: 900px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150%;
+}
