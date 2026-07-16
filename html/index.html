@@ -1,211 +1,189 @@
 <!doctype html>
 <html lang="de" id="top">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Das kleine Logo im Tab -->
 
-    <!-- <link
-      rel="icon"
-      type="image/png"
-      href="../images/LogoTabSW.png"
-      alt="Logo mit einem M in geringer Auflösung"
-      canvas { display: block; }
-      /> -->
-      <link rel="icon" type="image/png" href="../images/LogoTabSW.png" />
-      
-      <!-- Favicon -->
-    <!-- Der Titel am Tab -->
+    <meta name="author" content="Portfolio von Marvyn, Portfolio, Fachinformatiker, Anwendungsentwicklung, JavaScript, HTML, CSS, Python"/>
+
+    <link rel="icon" type="image/png" href="../images/LogoTabSW.png" />
     <title>Marvyn M.</title>
-    <meta
-    name="description"
-    content="Portfolio von Marvyn, Umschüler IT in Fachrichtung Anwendungsentwicklung."
-    />
-    <!-- ↑ in "content" kommt Inhalt für bessere Zugänglichkeit -->
+
     <link rel="stylesheet" href="../css/style_index.css" />
-    
-    <!-- Hier binde ich PyScript ein -->
-    <link
-    rel="stylesheet"
-    href="https://pyscript.net/releases/2026.2.1/core.css"
-    />
-    <script
-    type="module"
-    src="https://pyscript.net/releases/2026.2.1/core.js"
-    ></script>
-    
-    <canvas id="matrix"></canvas>
 
-        <!-- Das kleine Logo im Tab -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="../images/LogoTabSW.png"
-      alt="Logo mit einem M in geringer Auflösung"
-      canvas { display: block; }
-      />
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.2.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.2.1/core.js"></script>
+</head>
 
-    </head>
-    
-    
-    <body>
-      <div class="cursor"></div>
+<body>
 
-      <div class="parallax"></div>
+<div id="top"></div>
+<div id="mobileTop"></div>
 
+<div class="parallax"></div>
+<div class="parallax-mobile"></div>
+<canvas id="matrix"></canvas>
+<div class="cursor"></div>
 
-      <header class="top-nav">
-        <div class="logo">
-          <img 
-          src="../images/LogoTabSW.png" 
-          alt="Logo M"></div>
-        <ul class="menue">
-          <a href="./index.html">START</a>
-          <a href="./profil.html" class="nav-link">PROFIL</a>
-          <a href="./index.html" class="nav-link">SKILLS</a>
-          <a href="./index.html" class="nav-link">QUESTS</a>
-        </ul>
-        </header>
+<header class="top-nav">
+    <div class="logo">
+        <img src="../images/LogoEntwurfWeissTransparent.png" loading="lazy" alt="Logo M">
+    </div>
 
-      <header class="site-header" id="landingpage">
-      <h1>Header</h1>
-      </header>
+    <!-- ######### TO-DO -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-  <div style="height: 40px;">
-    <!-- Platz zum Scrollen -->
-  </div>
+    <ul class="menue" id="mobileMenu">
+        <a href="./index.html" class="active">START</a>
+        <a href="./profil.html" class="nav-link">Profil</a>
+        <a href="./quests.html" class="nav-link">Quests</a>
+        <a href="./blog.html" class="nav-link">B-Log</a>
+        <a href="./c64_style.html" class="nav-link">C64</a>
+    </ul>
+</header>
 
-  <div class="parallax-section">
+<header class="site-header" id="landingpage">
+    <h1>Willkommen</h1>
+</header>
+
+<div style="height: 40px;"></div>
+
+<div class="parallax-section">
     <div class="content">
-        Hallo, ich bin Marvyn Melzer! 🧑‍💻 <br>
-        <br> 
-        Im Rahmen meiner <em>Umschulung</em> bin ich auf <strong>Praktikumssuche</strong> <br>
-        für den <br><br><strong><em>10. August 2026 - 01. April 2027</em></strong><br><br>
-        Als <em>Berufseinsteiger</em> bin ich auf <strong>Praktikumssuche</strong> zum <em>nächstmöglichen</em> Zeitpunkt!
+        Hallo, ich bin <span class="name-fly">Marvyn Melzer!</span> 🧑‍💻 <br><br>
+        Im Rahmen meiner <em>Umschulung</em> bin ich auf <strong>Praktikumssuche</strong><br>
+        für den <br><br>
+        <strong><em>10. August 2026 - 01. April 2027</em></strong><br><br>
+        Als <em>Berufseinsteiger</em> bin ich auf <strong>Praktikumssuche</strong> zum <em>nächstmöglichen</em> Zeitpunkt,
+        um direkt reale praktische Erfahrungen zu sammeln!
     </div>
-  </div>
 
+    <div class="content1">
+        <h1>Über mich</h1>
+        Als angehender Anwendungsentwickler konzentriere ich mich darauf, Software klar, funktional und nutzerfreundlich zu gestalten.
+Ich möchte mich weiter in Automatisierung, Hosting und Deployment entwickeln und Tools bauen, die echte Abläufe verbessern.<br><br>
 
-  <h2>Projekte</h2>
+        <div class="matrix-btn-wrapper">
+            <a href="./profil.html" class="matrix-btn">Zu meinem Profil</a>
+        </div>
+    </div>
+</div>
 
-    <div class="test">
+<h2>Experimente</h2>
 
+<div class="test">
 
-        <div class="pythoncode">
-            <script type="py" terminal>
-          from pyscript import display
-          display("Python-Skript in HTML über PyScript einbinden:")
+    <div class="pythoncode">
+        <script type="py" terminal>
+            from pyscript import display
 
-          print("\nAusgabe der Fibonacci-Folge (f_{n}=f_{n-1}+f_{n-2} für n≥3):\nPython Code:\nprev = 0\nprev_prev = 1\n\nfib_lenght = int(7)\nfor i in range(0, fib_lenght):\n    present = prev + prev_prev\n    prev_prev = prev\n    prev = present\n    print(present)")
-          
-          prev = 0
-          prev_prev = 1
+            display("Python-Skript in HTML über PyScript einbinden:")
 
-          fib_lenght = int(7)
-          for i in range(0, fib_lenght):
-              present = prev + prev_prev
-              prev_prev = prev
-              prev = present
-              print(present)
+            print("\nAusgabe der Fibonacci-Folge (f_{n}=f_{n-1}+f_{n-2} für n≥3):\nPython Code:\nprev = 0\nprev_prev = 1\n\nfib_lenght = int(7)\nfor i in range(0, fib_lenght):\n    present = prev + prev_prev\n    prev_prev = prev\n    prev = present\n    print(present)")
+            
+            prev = 0
+            prev_prev = 1
 
-          print("\nName: Marvyn Melzer \nAngehender Fachinformatiker für Anwendungsentwicklung. \n\nStatus: Umschulung / Berufseinstieg \nStandort: Wetterau")
+            fib_lenght = int(7)
+            for i in range(0, fib_lenght):
+                present = prev + prev_prev
+                prev_prev = prev
+                prev = present
+                print(present)
+
+            print("\nName: Marvyn Melzer \nAngehender Fachinformatiker für Anwendungsentwicklung. \n\nStatus: Umschulung / Berufseinstieg \nStandort: Wetterau")
         </script>
-        <p>Die ersten 7 Zahlen in der Fibonacci-Folge.</p>      
-        </div>  
 
-        <table class="tabelle">
-          <caption><h3>HTML Tabelle über Handelskalkulation</h3></caption>
-          <tr>
-            <th>Position</th>
-            <th>Betrag (€)</th>
-          </tr>
-
-          <tr>
-            <td>Listeneinkaufspreis (LEP)</td>
-            <td>100,00</td>
-          </tr>
-
-          <tr>
-            <td>- Liefererrabatt (10%)</td>
-            <td>-10,00</td>
-          </tr>
-
-          <tr>
-            <td>= Zieleinkaufspreis</td>
-            <td>90,00</td>
-          </tr>
-
-          <tr>
-            <td>- Lieferskonto (2%)</td>
-            <td>-1,80</td>
-          </tr>
-
-          <tr>
-            <td>= Bareinkaufspreis</td>
-            <td>88,20</td>
-          </tr>
-
-          <tr>
-            <td>+ Bezugskosten</td>
-            <td>5,00</td>
-          </tr>
-
-          <tr>
-            <td>= Einstandspreis</td>
-            <td>93,20</td>
-          </tr>
-
-          <tr>
-            <td>+ Handlungskosten (20%)</td>
-            <td>18,64</td>
-          </tr>
-
-          <tr>
-            <td>= Selbstkosten</td>
-            <td>111,84</td>
-          </tr>
-
-          <tr>
-            <td>+ Gewinn (10%)</td>
-            <td>11,18</td>
-          </tr>
-
-          <tr>
-            <td>= Barverkaufspreis</td>
-            <td>123,02</td>
-          </tr>
-
-          <tr>
-            <td>+ Kundenskonto (2%)</td>
-            <td>2,46</td>
-          </tr>
-
-          <tr>
-            <td>= Zielverkaufspreis</td>
-            <td>125,48</td>
-          </tr>
-
-          <tr>
-            <td>+ Kundenrabatt (10%)</td>
-            <td>12,55</td>
-          </tr>
-
-          <tr>
-            <td><strong>= Listenverkaufspreis</strong></td>
-            <td><strong>138,03</strong></td>
-          </tr>
-        </table>
-    </div>
+        <p>Die ersten 7 Zahlen der Fibonacci-Folge mit Python berechnen.</p>
     </div>
 
-    <section class = "hero">
-      <h1> XXXXXXXXXXXXXXXXXXXX</h1>
-    </section>  
+    <table class="tabelle">
+        <caption><h3>HTML Tabelle über Handelskalkulation (Prüfungsinhalt IHK)</h3></caption>
 
-  
-  <!-- JS AM ENDE -->
-    <script src="../js/script.js"></script>
-    
-  </body>
+        <tr><th>Position</th><th>Betrag (€)</th></tr>
 
+        <tr><td>Listeneinkaufspreis (LEP)</td><td>100,00</td></tr>
+        <tr><td>- Liefererrabatt (10%)</td><td>-10,00</td></tr>
+        <tr><td>= Zieleinkaufspreis</td><td>90,00</td></tr>
+        <tr><td>- Lieferskonto (2%)</td><td>-1,80</td></tr>
+        <tr><td>= Bareinkaufspreis</td><td>88,20</td></tr>
+        <tr><td>+ Bezugskosten</td><td>5,00</td></tr>
+        <tr><td>= Einstandspreis</td><td>93,20</td></tr>
+        <tr><td>+ Handlungskosten (20%)</td><td>18,64</td></tr>
+        <tr><td>= Selbstkosten</td><td>111,84</td></tr>
+        <tr><td>+ Gewinn (10%)</td><td>11,18</td></tr>
+        <tr><td>= Barverkaufspreis</td><td>123,02</td></tr>
+        <tr><td>+ Kundenskonto (2%)</td><td>2,46</td></tr>
+        <tr><td>= Zielverkaufspreis</td><td>125,48</td></tr>
+        <tr><td>+ Kundenrabatt (10%)</td><td>12,55</td></tr>
+        <tr><td><strong>= Listenverkaufspreis</strong></td><td><strong>138,03</strong></td></tr>
+    </table>
+
+</div>
+
+<div id="gameTitle">
+    <h2>Klick-Spiel - weil's modern ist (⌐■_■)</h2>
+</div>
+
+<div id="game">
+
+    <div class="game-header">
+        <span>Zeit: <span id="time">10 Neo, beschaffe mir 10 grüne Pillen!</span></span>
+        <span>Punkte: <span id="score">0</span></span>
+    </div>
+
+    <div id="target">ア</div>
+
+</div>
+
+<footer>
+
+    <div class="footerpic">
+        <img src="../images/LogoEntwurfWeissGridPlanetOnly.png" alt="Logo M">
+    </div>
+
+    <div class="foot">
+
+        <div class="footer-section">
+            <h3>Navigation</h3>
+            <a href="./index.html">Start</a>
+            <a href="./profil.html">Profil</a>
+            <a href="./quests.html">Quests</a>
+            <a href="./blog.html">B-Log</a>
+            <a href="./c64_style.html">C64</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <a href="https://github.com/ShogunOptOut" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/marvyn-m-252b33366/" target="_blank">LinkedIn</a>
+            <a href="mailto:savemel@proton.me" target="_blank">E-Mail</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Rechtliches</h3>
+            <a href="index.html">Impressum</a>
+            <a href="index.html">Datenschutz</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="top-button">
+            <a href="index.html" class="matrix-btn top-desktop">↑ Nach oben ↑</a>
+            <a href="index.html" class="matrix-btn top-mobile">↑ Nach oben ↑</a>
+        </div>
+        <p>© 2026 Marvyn Melzer</p>
+    </div>
+
+</footer>
+
+<script src="../js/script.js" defer></script>
+
+</body>
 </html>

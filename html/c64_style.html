@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #0000AA;
+    color: #AAAAFF;
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    padding: 20px;
+}
+
+/* Eingabefeld */
+input {
+    background: #0000AA;
+    color: #AAAAFF;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    width: 90%;
+
+    display: block;
+    margin-top: 10px;
+    caret-color: rgb(0, 0, 0);
+}
+
+#input {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid frame;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="screen">&nbsp;&nbsp;&nbsp;&nbsp;**** COMMODORE 64 BASIC V2 ****<br>
+&nbsp;64K RAM SYSTEM 38911 BASIC BYTES FREE<br><br>
+<br>
+Tippe HELP um die Befehle anzuzeigen...
+<br><br>
+READY.<br>
+</div>
+
+<input id="input" autofocus>
+
+<script>
+const input = document.getElementById("input");
+const screen = document.getElementById("screen");
+
+input.addEventListener("keydown", function(e) {
+
+    if (e.key === "Enter") {
+
+        let cmd = input.value.trim().toLowerCase();
+
+        screen.innerHTML += "> " + cmd + "<br>";
+        if (cmd === "hilfe") {
+            screen.innerHTML += "Alles gut?<br>MEINTEST DU >>> HELP ?";
+        } else if (cmd.includes("hi") || 
+            cmd.includes("hallo") || 
+            cmd.includes("hey") || 
+            cmd.includes("ey") || 
+            cmd.includes("ay") || 
+            cmd.includes("gude") || 
+            cmd.includes("guten tag") ||
+            cmd.includes("moin") ||
+            cmd.includes("moin moin") ||
+            cmd.includes("servus") ||
+            cmd.includes("grüß gott") ||
+            cmd.includes("grüss gott") ||
+            cmd.includes("gruess gott") ||
+            cmd.includes("grüße") ||
+            cmd.includes("grüsse") ||
+            cmd.includes("gruesse") ||
+            cmd.includes("tach") ||
+            cmd.includes("tag") ||
+            cmd.includes("yo") ||
+            cmd.includes("hola") ||
+            cmd.includes("bonjour") ||
+            cmd.includes("ciao")) {
+            screen.innerHTML += "GUTEN TAG! (:<br>";
+        } else if (cmd === "info") {
+            screen.innerHTML += "<br>============= CHATBOT IM C64-STIL =============<br><br>============= @2026 MARVYN MELZER =============< <br><br><br>Hallo!<br>Schoen, dass du es zu mir geschafft hast.<br>Sieh dich gerne um und lerne mich besser kennen.<br><br>ALLE BEFEHLE >>>> HELP";
+        } else if (cmd === "hobbies" || cmd === "hobbys" || cmd === "hobby" || cmd === "hobbie"|| cmd === "hobbi") {
+            screen.innerHTML += "HOBBIES<br> Heimserver | Arduino | 3D Programme | DAWs | MTB | DRUMS";
+        } else if (cmd === "help") {
+            screen.innerHTML += "<br>&nbsp;&nbsp;&nbsp;&nbsp;**** COMMODORE 64 BASIC V2 ****<br>&nbsp;64K RAM SYSTEM 38911 BASIC BYTES FREE<br><br><br>HELP | INFO | WHOAMI | SKILLS | HOBBIES | EXIT<br><br>HELP >>>> VERZEICHNIS<br>INFO >>>> IMPRESSUM<br>WHOAMI >>>> VORSTELLUNG<br>SKILLS >>>> KENNTNISSE<br>HOBBIES >>>> ABLENKUNGEN<br>EXIT >>>> VERLASSEN";
+        } else if (cmd === "skills" || cmd === "skillz") {
+            screen.innerHTML += "<br>SKILLS<br><br>GRUNDKENNTNISSE: Python | OOP | HTML | CSS | JavaScript | SQL | Webentwicklung | Hosting/Deployment | Git | Microcontroller<br><br>MITTELSTUFE: Webdesign | UI <br><br>ZUKUNFTSKOMPETENZEN: Frameworks (React, Django) | REST-API | Architecture Patterns | Cloud-Deployment | CI/CD | DOCKER | Git-Workflows | Webserver";
+        } else if (cmd === "which" || cmd === "whoami") {
+            screen.innerHTML += "<br>NAME: MARVYN MELZER<br>ALTER: 37<br>WOHNORT: WETTERAU<br><br>FAMILIENSTAND: VERLOBT<br>ABGESCHLOSSENE BESCHAEFTIGUNGEN: SELBSTSTAENDIG (VERANSTALTUNGSTECHNIK, GRAFIKDESIGN), CONTENT MANAGER, ERZIEHER, FSJ<br>AUSBILDUNG: FACHKRAFT FUER VERANSTALTUNGSTECHNIK<br>STATUS: GESUND<br>HUMOR: !NEIN<br>KONTOSTAND: ANFRAGE VON BANK VERWEIGERT<br> FUEHRERSCHEIN: JA<br>AUTO: KAPUTT<br><br>";
+        } else if (cmd === "exit") {
+            screen.innerHTML += "<br>VERLASSEN...";
+
+            setTimeout(() => {
+                window.location.href = "./index.html";
+
+            }, 1000);
+        } else {
+            screen.innerHTML += "<br>SYNTAX ERROR<br><br>MEINTEST DU >>> HELP ?";
+        }
+
+        screen.innerHTML += "<br><br>READY.<br>";
+
+        input.value = "";
+
+        window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth" // oder "auto"
+});
+
+    }
+});
+</script>
+
+</body>
+</html>

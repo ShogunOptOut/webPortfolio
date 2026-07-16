@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvyns Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Grundstyles -->
+    <style>
+        :root {
+            --bg-color: #02040a;
+            --accent: #00ff7f;
+            --accent-soft: #00ff7f33;
+            --text-main: #e0ffe8;
+            --text-muted: #7aa58a;
+            --card-bg: #050b12;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #071018 0, #02040a 45%, #000000 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        /* Matrix Hintergrund-Effekt */
+        .matrix-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                linear-gradient(to bottom, transparent 0, var(--accent-soft) 2px, transparent 4px),
+                linear-gradient(to right, transparent 0, var(--accent-soft) 1px, transparent 2px);
+            background-size: 100% 40px, 40px 100%;
+            opacity: 0.15;
+        }
+
+        header {
+            border-bottom: 1px solid var(--accent-soft);
+            backdrop-filter: blur(8px);
+            background: #02040acc;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Consolas", "Fira Code", monospace;
+            font-size: 1.1rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .logo span {
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+            display: grid;
+            grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+            gap: 2rem;
+        }
+
+        /* Hero / Intro */
+        .hero {
+            margin-bottom: 2rem;
+            padding: 1.5rem 1.5rem 1.2rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #050b12 0, #02040a 60%, #041a10 100%);
+            border: 1px solid var(--accent-soft);
+            box-shadow: 0 0 25px #00ff7f11;
+        }
+
+        .hero-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        .hero-meta {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-family: "Consolas", "Fira Code", monospace;
+        }
+
+        /* Blogliste */
+        .posts {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .post-card {
+            padding: 1.2rem 1.3rem;
+            border-radius: 10px;
+            background: var(--card-bg);
+            border: 1px solid #0b151f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0, #00ff7f11 40%, transparent 80%);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .post-card:hover::before {
+            opacity: 1;
+        }
+
+        .post-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .post-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .post-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .post-tags {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            border: 1px solid var(--accent-soft);
+            color: var(--accent);
+            font-family: "Consolas", "Fira Code", monospace;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            padding: 1rem 1.1rem;
+            border-radius: 10px;
+            background: var(--card-bg);
+            border: 1px solid #0b151f;
+        }
+
+        .sidebar-title {
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: "Consolas", "Fira Code", monospace;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .sidebar-list li + li {
+            margin-top: 0.3rem;
+        }
+
+        .sidebar-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            border-top: 1px solid var(--accent-soft);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Responsiv */
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+    <div class="matrix-bg"></div>
+
+    <header>
+        <nav class="nav">
+            <div class="logo"><s></s>MARV'S</s><span>.B-LOG</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="quests.html">Projekte</a>
+                <a href="profil.html">Über mich</a>
+                <a href="mailto:savemel@proton.me">Kontakt</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="hero">
+                <h1 class="hero-title">Willkommen im B-Log</h1>
+                <p class="hero-subtitle">
+                    Notizen, Experimente und Gedanken rund um Projekte, Visualisierungen und technische Spielereien.
+                </p>
+                <div class="hero-meta">
+                    STATUS: ONLINE · BUILD v0.0.4 · LAST UPDATE: 2026‑07‑16
+                </div>
+            </div>
+
+            <div class="posts">
+                <article class="post-card">
+                    <h2 class="post-title">Visualisierung der Matrix‑Transformationen</h2>
+                    <div class="post-meta">15. Juli 2026 · Kategorie: Mathe / Grafik</div>
+                    <p class="post-excerpt">
+                        In diesem Beitrag zeige ich, wie sich verschiedene Transformationen (Rotation, Skalierung, Shear)
+                        in der Matrix‑Darstellung visualisieren lassen und wie sich das im Browser interaktiv umsetzen lässt. (siehe unten)
+                    </p>
+                    <div class="post-tags">
+                        <span class="tag">#matrix</span>
+                        <span class="tag">#javascript</span>
+                        <span class="tag">#visualisierung</span>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <h2 class="post-title">Projektstruktur & Architektur</h2>
+                    <div class="post-meta">10. Juli 2026 · Kategorie: Devlog</div>
+                    <p class="post-excerpt">
+                        Kurzer Überblick über die aktuelle Struktur des Projekts, verwendete Libraries und Ideen für
+                        zukünftige Module wie Animationen, Shader‑Effekte und Exportfunktionen.
+                    </p>
+                    <div class="post-tags">
+                        <span class="tag">#devlog</span>
+                        <span class="tag">#architektur</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Letzte Einträge</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Visualisierung der Matrix‑Transformationen</a></li>
+                    <li><a href="#">Projektstruktur & Architektur</a></li>
+                    <li><a href="#">Ideen für interaktive Slider</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Kategorien</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Mathematik</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Devlog</a></li>
+                    <li><a href="#">Experimente</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Über den BLog</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);">
+                    Dieses Blog begleitet meine zuknftigen Projekte: von ersten Skizzen über technische Details
+                    bis hin zu fertigen Visualisierungen.
+                </p>
+            </div>
+        </aside>
+    </main>
+
+<div class="demo-container">
+  <canvas id="canvas" width="500" height="500"></canvas>
+  
+  <div class="controls">
+      <label>Rotation</label>
+      <input type="range" id="rot" min="0" max="360" value="0">
+      
+      <label>Skalierung</label>
+      <input type="range" id="scale" min="0.2" max="2" step="0.01" value="1">
+      
+      <label>Shear (Scheren)</label>
+      <input type="range" id="shear" min="-1" max="1" step="0.01" value="0">
+      
+      <label>Translation X</label>
+      <input type="range" id="moveX" min="-200" max="200" value="0">
+      
+      <label>Translation Y</label>
+      <input type="range" id="moveY" min="-200" max="200" value="0">
+    </div>
+    <h3><br>Transformationsmatrix</h3>
+  <pre id="matrixDisplay"></pre>
+  </div>
+
+    <footer>
+        MATRIX.BLOG · © 2026 · by Marvyn · All computations are approximate.
+    </footer>
+
+    <script src="../js/blog.js" defer></script>
+</body>
+</html>

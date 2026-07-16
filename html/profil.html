@@ -3,202 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Der Titel am Tab -->
-    <title>Marvyn M.</title>
+
     <meta
-    name="description"
-    content="Portfolio von Marvyn, Umschüler IT in Fachrichtung Anwendungsentwicklung."
+      name="author"
+      content="Portfolio von Marvyn, Portfolio, Fachinformatiker, Anwendungsentwicklung, JavaScript, HTML, CSS, Python"
     />
-    <!-- ↑ in "content" kommt Inhalt für bessere Zugänglichkeit -->
-    <link rel="stylesheet" href="../css/style_index.css" />
-    <!-- Das kleine Logo im Tab -->
+
     <link rel="icon" type="image/png" href="../images/LogoTabSW.png" />
-      
-    <!-- Hier binde ich PyScript ein -->
-    <link
-    rel="stylesheet"
-    href="https://pyscript.net/releases/2026.2.1/core.css"
-    />
-    <script
-    type="module"
-    src="https://pyscript.net/releases/2026.2.1/core.js"
-    ></script>
-    
+    <title>Marvyn M.</title>
+
+    <link rel="stylesheet" href="../css/style_index.css" />
+
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <div id="mobileTop"></div>
+
     <canvas id="matrix"></canvas>
+    <div class="cursor"></div>
 
-    <!-- Das kleine Logo im Tab -->
+    <header class="top-nav">
+      <div class="logo">
+        <img
+          src="../images/LogoEntwurfWeissTransparent.png"
+          loading="lazy"
+          alt="Logo M"
+        />
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="menue" id="mobileMenu">
+        <a href="./index.html" class="nav-link">Start</a>
+        <a href="./profil.html" class="active">PROFIL</a>
+        <a href="./quests.html" class="nav-link">Quests</a>
+        <a href="./blog.html" class="nav-link">B-Log</a>
+        <a href="./c64_style.html" class="nav-link">C64</a>
+      </ul>
+    </header>
     
-    <link
-      rel="icon"
-      type="image/png"
-      href="../images/LogoTabSW.png"
-      alt="Logo mit einem M in geringer Auflösung"
-      canvas { display: block; }
-      />
-      
-    </head>
-    
-    
-    <body>
-      <div class="cursor"></div>
-
-      <div class="parallax"></div>
-
-
-      <header class="top-nav">
-        <div class="logo">
-          <img 
-          src="../images/LogoTabSW.png" 
-          alt="Logo M"></div>
-        <ul class="menue">
-          <a href="./index.html">START</a>
-          <a href="./index.html">Profil</a>
-          <a href="./index.html">Skills</a>
-          <a href="./index.html">Quests</a>
-
-        </ul>
-        </header>
-
-      <header class="site-header" id="landingpage">
-      <h1>Header</h1>
-      </header>
-
-  <div style="height: 40px;">
-    <!-- Platz zum Scrollen -->
-  </div>
-
-  <div class="parallax-section">
-    <div class="content">
-        Hallo, ich bin Marvyn Melzer! 🧑‍💻 <br>
-        <br> 
-        Im Rahmen meiner <em>Umschulung</em> bin ich auf <strong>Praktikumssuche</strong> <br>
-        für den <br><br><strong><em>10. August 2026 - 01. April 2027</em></strong><br><br>
-        Als <em>Berufseinsteiger</em> bin ich auf <strong>Praktikumssuche</strong> zum <em>nächstmöglichen</em> Zeitpunkt!
+    <div class="profil">
+    <h2>Mein Profil</h2>
     </div>
-  </div>
+        <div id="text-content">
+        <p><span>Willkommen auf meinem Profil! </span><br>&nbsp;&nbsp;Freut mich, dass du reinschaust!</p>
+        <p><br>Mein Name ist</p>
+        <p>Marvyn Melzer</p>
+        <p>Angehender <em id="wechselwort"></em></p>
+        </div>
+        
+        <div class="uebermich-container">
 
+    <h1 class="uebermich">Über mich</h1>
 
-  <h2>Projekte</h2>
+    <div class="uebermich-wrapper">
 
-    <div class="test">
+        <div class="ausbildung">
+            <p>Fachkraft für Veranstaltungstechnik war mein erster Ausbildungsberuf, in dem ich bis 2019 aktiv war.  
+Dort habe ich gelernt, wie man komplexe technische Systeme versteht, aufbaut und sicher betreibt.
+Ob Licht, Ton oder Bühnentechnik – ich habe früh gelernt, strukturiert zu arbeiten, Probleme schnell zu analysieren und technische Abläufe zuverlässig umzusetzen.
+Dieses technische Fundament begleitet mich heute in der Softwareentwicklung.</p>
+        </div>
 
+        <div class="uebermich-bild">
+            <img src="../images/Veranstaltungstechnik.png" alt="Marvyn">
+        </div>
 
-        <div class="pythoncode">
-            <script type="py" terminal>
-          from pyscript import display
-          display("Python-Skript in HTML über PyScript einbinden:")
-
-          print("\nAusgabe der Fibonacci-Folge (f_{n}=f_{n-1}+f_{n-2} für n≥3):\nPython Code:\nprev = 0\nprev_prev = 1\n\nfib_lenght = int(7)\nfor i in range(0, fib_lenght):\n    present = prev + prev_prev\n    prev_prev = prev\n    prev = present\n    print(present)")
-          
-          prev = 0
-          prev_prev = 1
-
-          fib_lenght = int(7)
-          for i in range(0, fib_lenght):
-              present = prev + prev_prev
-              prev_prev = prev
-              prev = present
-              print(present)
-
-          print("\nName: Marvyn Melzer \nAngehender Fachinformatiker für Anwendungsentwicklung. \n\nStatus: Umschulung / Berufseinstieg \nStandort: Wetterau")
-        </script>
-        <p>Die ersten 7 Zahlen in der Fibonacci-Folge.</p>      
-        </div>  
-
-        <table class="tabelle">
-          <caption><h3>HTML Tabelle über Handelskalkulation</h3></caption>
-          <tr>
-            <th>Position</th>
-            <th>Betrag (€)</th>
-          </tr>
-
-          <tr>
-            <td>Listeneinkaufspreis (LEP)</td>
-            <td>100,00</td>
-          </tr>
-
-          <tr>
-            <td>- Liefererrabatt (10%)</td>
-            <td>-10,00</td>
-          </tr>
-
-          <tr>
-            <td>= Zieleinkaufspreis</td>
-            <td>90,00</td>
-          </tr>
-
-          <tr>
-            <td>- Lieferskonto (2%)</td>
-            <td>-1,80</td>
-          </tr>
-
-          <tr>
-            <td>= Bareinkaufspreis</td>
-            <td>88,20</td>
-          </tr>
-
-          <tr>
-            <td>+ Bezugskosten</td>
-            <td>5,00</td>
-          </tr>
-
-          <tr>
-            <td>= Einstandspreis</td>
-            <td>93,20</td>
-          </tr>
-
-          <tr>
-            <td>+ Handlungskosten (20%)</td>
-            <td>18,64</td>
-          </tr>
-
-          <tr>
-            <td>= Selbstkosten</td>
-            <td>111,84</td>
-          </tr>
-
-          <tr>
-            <td>+ Gewinn (10%)</td>
-            <td>11,18</td>
-          </tr>
-
-          <tr>
-            <td>= Barverkaufspreis</td>
-            <td>123,02</td>
-          </tr>
-
-          <tr>
-            <td>+ Kundenskonto (2%)</td>
-            <td>2,46</td>
-          </tr>
-
-          <tr>
-            <td>= Zielverkaufspreis</td>
-            <td>125,48</td>
-          </tr>
-
-          <tr>
-            <td>+ Kundenrabatt (10%)</td>
-            <td>12,55</td>
-          </tr>
-
-          <tr>
-            <td><strong>= Listenverkaufspreis</strong></td>
-            <td><strong>138,03</strong></td>
-          </tr>
-        </table>
-    </div>
     </div>
 
-    <section class = "hero">
-      <h1> XXXXXXXXXXXXXXXXXXXX</h1>
-    </section>  
+</div>
 
-  
-  <!-- JS AM ENDE -->
-    <script src="../js/script.js"></script>
-    
+<h2>Skills</h2>
+
+
+<div class="matrix-btn-wrapper">
+    <a href="./quests.html" class="matrix-btn">Zu meinen Projekten</a>
+</div>
+
+
+    <footer>
+      <div class="footerpic">
+        <img src="../images/LogoEntwurfWeissGridPlanetOnly.png" alt="Logo M" />
+      </div>
+
+      <div class="foot">
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <a href="./index.html">Start</a>
+            <a href="./profil.html">Profil</a>
+            <a href="./quests.html">Quests</a>
+            <a href="./blog.html">B-Log</a>
+            <a href="./c64_style.html">C64</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <a href="mailto:savemel@proton.me" target="_blank">E-Mail</a>
+          <a href="https://github.com/ShogunOptOut" target="_blank">GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/marvyn-m-252b33366/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+
+        <div class="footer-section">
+          <h3>Rechtliches</h3>
+          <a href="profil.html">Impressum</a>
+          <a href="profil.html">Datenschutz</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="top-button">
+          <a href="profil.html" class="matrix-btn top-desktop">↑ Nach oben ↑</a>
+          <a href="profil.html" class="matrix-btn top-mobile">↑ Nach oben ↑</a>
+        </div>
+        <p>© 2026 Marvyn Melzer</p>
+      </div>
+    </footer>
+
+    <script src="../js/script.js" defer></script>
   </body>
-
 </html>
