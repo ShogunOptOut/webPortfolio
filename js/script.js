@@ -1,3 +1,14 @@
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        setTimeout(() => {
+            location.reload();
+        }, 100); // 0,1 Sekunde warten
+    }
+});
+
+window.addEventListener("load", () => {
+  document.body.style.opacity = "1";
+});
 
 
 function startMatrix() {
@@ -30,7 +41,7 @@ function startMatrix() {
     cursorDot.style.left = mouseX + "px";
     cursorDot.style.top = mouseY + "px";
 
-    cursor.style.opacity = "0.8";
+    cursor.style.opacity = "1";
     cursor.style.left = mouseX + "px";
     cursor.style.top = mouseY + "px";
   });
@@ -104,6 +115,7 @@ function startMatrix() {
 
   animateTrail();
 
+
   // ===== MATRIX =====
   function resize() {
     canvas.width = window.innerWidth;
@@ -123,14 +135,14 @@ function startMatrix() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#223b2c";
+    ctx.fillStyle = "rgba(26, 110, 60, 0.23)";
     ctx.font = fontSize + "px monospace";
 
     for (let i = 0; i < drops.length; i++) {
       const text = letters[Math.floor(Math.random() * letters.length)];
       ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.99) {
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.9) {
         drops[i] = 0;
       }
 
@@ -320,38 +332,3 @@ document.getElementById("game").innerHTML = `
     cacheElements();
     moveTarget();
 }
-
-
-const worte = [
-  "Web Designer",
-  "Web Entwickler",
-  "Fullstack Entwickler",
-  "Automatisierer",
-  "Anwendungsentwickler"
-];
-
-let index = 0;
-const ziel = document.getElementById("wechselwort");
-
-function wortWechseln() {
-
-    // 1. Fade-Out starten
-    ziel.style.animation = "fadeOut 0.7s forwards";
-
-    setTimeout(() => {
-        // 2. Wort wechseln
-        ziel.textContent = worte[index];
-        index = (index + 1) % worte.length;
-
-        // 3. Fade-In starten
-        ziel.style.animation = "fadeIn 0.7s forwards";
-    }, 600); // nach Ende des Fade-Out
-}
-
-// erstes Wort sofort anzeigen
-setTimeout(() => {
-  ziel.textContent = worte[4]
-  ziel.style.animation = "fadeIn 0.7s backwards";
-}, 500);
-// alle 3 Sekunden wechseln
-setInterval(wortWechseln, 2500);

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/sap.css">
+
+    <title>Datenbank Beispielaufbau</title>
+
+</head>
+
+
+<body>
+
+    <div class="nav">
+        <ul class="nav-bar">
+                <li><a href="../html/index.html">Homepage</a></li>
+
+        </ul>
+</div>
+
+    <h2>Datenbank</h2>
+    <div class="editor-wrapper">
+  <div class="editor-menu">
+    <span>Datei</span>
+    <span>Bearbeiten</span>
+    <span>Ansicht</span>
+  </div>
+
+  <div class="editor1" contenteditable="true">
+    Schreibe hier...
+  </div>
+</div>
+
+
+
+    <!-- table bauen -->
+    <!-- ul li -->
+
+    <div class="tree">
+        <ul>
+            <li>
+                <span class="testfolder">📁 AKTEN</span>
+                <ul>
+                    <li><span class="testfolder">📁 X AKTEN</span>
+                        <ul>
+                            <li><span class="testfile" data-file="SB0001">📄SB0001</li>
+                            <li><span class="testfile" data-file="SB0002">📄SB0002</li>
+                        </ul>
+                    </li>
+                    <li><span class="testfolder">📁 Y AKTEN</span>
+                <ul>
+                    <li><span class="testfolder">📁 ORDNER A</span>
+                        <ul>
+                            <li><span class="testfile">📄SB1</li>
+                            <li><span class="testfile">📄SB2</li>
+                        </ul>
+                        </li>
+                    <li><span class="testfolder">📁 ORDNER B</span>
+                        <ul>
+                            <li><span class="testfile">📄 TST1</span></li>
+                            <li><span class="testfile">📄 TST2</span></li>
+                            <li><span class="testfile">📄 TST3</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li></li>
+        </ul>
+    </div>
+
+
+
+<div id="editor" class="editor hidden" contenteditable="true">
+  Datei öffnen…
+</div>
+
+<script>
+    document.querySelectorAll('.tree .testfolder').forEach(testfolder => {
+        testfolder.addEventListener('click', () => {
+            testfolder.classList.toggle('open');
+            const childList = testfolder.nextElementSibling;
+            if (childList) {
+                childList.style.display = 
+                childList.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    });
+
+    document.querySelectorAll('.tree ul ul').forEach(ul => {
+        ul.style.display = 'none';
+    });
+
+  const editor = document.getElementById("editor");
+
+  document.querySelectorAll(".testfile").forEach(testfile => {
+    testfile.addEventListener("click", () => {
+      const filename = testfile.dataset.testfile;
+
+      editor.classList.remove("hidden");
+      editor.innerText = "Geöffnete Datei: " + filename + "\n\nHier kannst du schreiben...";
+    });
+  });
+</script>
+
+</body>
+</html>
