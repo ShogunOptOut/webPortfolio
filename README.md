@@ -2,6 +2,7 @@
 Website with an overview about me.
 
 [Marv's Portfolio 2026](https://shogunoptout.github.io/webPortfolio/html/)
+<img width="2480" height="3508" alt="profil" src="https://github.com/user-attachments/assets/1300cec2-973a-43a6-a9fd-aed133cfcbbe" />
 
 Portfolio
 | Startseite 
