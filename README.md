@@ -1,10 +1,8 @@
 # webPortfolio
 Website with an overview about me.
+[Marv's Portfolio 2026](https://shogunoptout.github.io/webPortfolio/html/)<img width="240" height="160" alt="BrandMotionGIFbySofascore" src="https://github.com/user-attachments/assets/7dea4b82-2143-425b-b3bb-381f350361d6" />
 
-[Marv's Portfolio 2026](https://shogunoptout.github.io/webPortfolio/html/) <img width="288" height="384" alt="fingerGIF" src="https://github.com/user-attachments/assets/2a9e7b4d-a335-430f-aa8a-53a71b014a30" />
-
-
-Portfolio
+Portfolio 
 | Startseite 
 | Über mich
 | Projekte 
