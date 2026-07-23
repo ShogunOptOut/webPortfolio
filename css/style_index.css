@@ -195,11 +195,11 @@ button,
 .site-header h1,
 h2 {
   text-align: left;
-  margin: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   height: 3rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   background-color: limegreen;
-  border-radius: 4px;
   color: white;
 }
 
@@ -769,7 +769,7 @@ footer {
   width: 60%;
   height: auto;
   margin-top: 4rem;
-  opacity: 0.15;
+  opacity: 0.3;
   margin-left: -4rem;
   padding-bottom: 5rem;
 }
@@ -890,7 +890,7 @@ footer {
 .uebermich-wrapper,
 .uebermich-wrapper2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space;
   align-items: stretch;
 }
 
@@ -937,7 +937,7 @@ footer {
   flex: 1;
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 45%;
 }
 .uebermich-bild2 {
   flex: 1;
